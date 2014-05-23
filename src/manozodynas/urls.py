@@ -3,11 +3,13 @@ from django.conf import settings
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from .views import index_view, login_view
+from .views import index_view, login_view, words_view, NewWord
 
 urlpatterns = patterns('',
     url(r'^$', index_view, name='index'),
-    url(r'^login$', login_view, name='login'),
+    url(r'^login$', login_view, name='login'),	
+    url(r'^words$', words_view, name='words_view'),
+    url(r'^new_word$', NewWord.as_view(), name='new_word'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
