@@ -7,6 +7,7 @@ from django.utils import timezone
 
 class Words(models.Model):
 	Word = models.CharField(max_length=100)
+	Translation = models.CharField(max_length=100)
 
 
 class User(AbstractBaseUser, PermissionsMixin):
